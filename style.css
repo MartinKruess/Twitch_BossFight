@@ -1,109 +1,158 @@
-:root{
-    font-size: 62.5%
+:root {
+  font-size: 62.5%;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-body{
-    background-color:rgb(0, 0, 39);
-    color: #eee;
-    height: 100vh;
-    font-size: 1.6rem;
+body {
+  background-color: rgb(0, 0, 39);
+  color: #eee;
+  min-height: 100vh;
+  font-size: 1.6rem;
 }
 
-h1, h2, h3{
-    width: 100%;
-    text-align: center;
-    padding: 1.6rem;
+h1,
+h2,
+h3 {
+  width: 100%;
+  text-align: center;
+  padding: 1.6rem;
 }
 
-h1{
-    font-size: 3rem;
+h1 {
+  font-size: 3rem;
 }
 
-section{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
+section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 2rem;
 }
 
-#bossList{
-    width: 25rem;
-    height: 60rem;
-    padding: 1rem;
-    border: solid;
-    border-radius: 1rem;
+label[for="emote"],
+label[for="follow"],
+label[for="sub"],
+label[for="präfix"] {
+  padding: 1rem;
 }
 
-#bossList div{
-    width: 100%;
+input[type="checkbox"] {
+  height: 18px;
+  width: 18px;
+  padding: 1rem;
+  margin-right: 1rem;
 }
 
-#bossCard{
-    background-color: darkblue;
-    width: 100%;
-    height: 12rem;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    padding: 0.5rem;
-    border-radius: 0.5rem;
+#präfix {
+  width: 10rem;
 }
 
-.container{
-    max-width: 10rem;
-    height: 10rem;
-    margin: 0.2rem;
+#basicSettings {
+  width: 95%;
+  height: 20vh;
 }
 
-#previewList{
-    background: url("./uploads/Testragon.jpeg") center/cover;
-    max-width: 10rem;
-    height: 90%;
-    border-radius: 0.5rem;
+#bossList {
+  width: 25rem;
+  height: 60rem;
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0.5rem;
+  border: solid;
+  border-radius: 1rem;
 }
 
-.bossData{
-    max-width: 10rem;
-    margin: 0.1rem;
-    padding: 0.2rem 0.2rem 0 1rem;
+#bossList div {
+  width: 95%;
 }
 
-canvas{
-    background-color: #24262899;
-    width: 60rem;
-    height: 60rem;
-    padding: 1rem;
-    margin: 2.5rem;
-    border: solid;
-    border-radius: 1rem;
+#bossCard {
+  /* background-color: #010168; */
+  background-color: #333;
+  width: 100%;
+  height: 12rem;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
-form{
-    width: 25rem;
-    height: 60rem;
-    padding: 2rem;
-    border: solid;
-    border-radius: 1rem;
+#bossCard:hover {
+  background-color: #000080;
 }
 
-input{
-    padding: 0.5rem;
-    margin-bottom: 1rem;
-    border-radius: 1rem;
+.container {
+  max-width: 10rem;
+  height: 10rem;
+  margin: 0.2rem;
 }
 
-select{
-    padding: 0.4rem;
-    border-radius: 1rem;
+#previewList {
+  background: url("./uploads/Testragon.jpeg") center/cover;
+  max-width: 10rem;
+  height: 90%;
+  border-radius: 0.5rem;
 }
 
-button{
-    padding: 0.5rem 1.5rem;
-    border-radius: 1rem;
+.bossData {
+  max-width: 10rem;
+  margin: 0.1rem;
+  padding: 0.2rem 0.2rem 0 1rem;
+}
+
+canvas {
+  background-color: #24262899;
+  width: clamp(30rem, 80vw, 60rem);
+  height: clamp(30rem, 80vw, 60rem);
+  padding: 1rem;
+  margin: 2.5rem;
+  border: solid;
+  border-radius: 1rem;
+}
+
+form {
+  width: 25rem;
+  height: 60rem;
+  padding: 2rem;
+  border: solid;
+  border-radius: 1rem;
+}
+
+input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+}
+
+label {
+  font-size: 2rem;
+}
+
+select {
+  width: 90%;
+  margin-bottom: 1rem;
+  padding: 0.4rem;
+  border-radius: 1rem;
+}
+
+button {
+  width: 80%;
+  margin: 2rem;
+  font-size: 1.6rem;
+  font-weight: 600;
+  padding: 0.7rem 2rem;
+  border-radius: 1.5rem;
+  border: none;
+}
+
+button:hover {
+  background-color: #24262899;
+  color: #eee;
 }

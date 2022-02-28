@@ -6,12 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
+    
     <title>Document</title>
 </head>
 <body>
     <main>
         <section>
             <h1>Twitch Bossfight System</h1>
+            <form action="" method="post" id="basicSettings" class="form">
+                <h2>Trigger Settings</label></h2>
+                <label for="emote">Emotes</label>
+                <input type="checkbox" name="" id="emote" checked>
+                <label for="follow">Follows</label>
+                <input type="checkbox" name="" id="follow">
+                <label for="sub">Subs</label>
+                <input type="checkbox" name="" id="sub">
+                <label for="präfix">Emote Präfix</label>
+                <input type="text" id="präfix">
+            </form>
             <div id="bossList">
                 <div id="bossCard">
                     <div class="container">
@@ -24,31 +36,33 @@
                     </div>
                 </div>
             </div>
-            <canvas></canvas>
-            <form action="" method="POST">
+            <canvas>Drag and Drop Upload img</canvas>
+            <form action="" method="POST" class="form">
                 <h2>Boss Settings</h2>
-                <label for="">Name</label>
-                <input type="text">
-                <label for="">Health</label>
-                <input type="text">
-                <label for="">Level</label>
-                <input type="text">
-                <label for="">Damage</label>
-                <input type="text">
-                <label for="">Multiplier</label>
-                <input type="text">
-                <label for="">Text after Death</label>
-                <input type="text">
+                <label for="name">Name</label>
+                <input type="text" id="name">
+                <label for="health">Health</label>
+                <input type="number" id="health">
+                <label for="lv">Level</label>
+                <input type="number" id="lv">
+                <label for="dmg">Damage</label>
+                <input type="number" id="dmg">
+                <label for="x">Multiplier</label>
+                <input type="float" id="x">
+                <label for="msg">Text after Death</label>
+                <input type="text" id="msg">
 
-                <select name="" id="">
+                <label for="hit">Hit Animation</label>
+                <select name="" id="hit">
                     <option value="">Normal Hit 1</option>
                     <option value="">Normal Hit 2</option>
                     <option value="">Emote Hit 1</option>
                     <option value="">Emote Hit 2</option>
                 </select>
-                <button type="submit">BUTTON</button>
+                <button type="button" id="sendBTN">Save Boss</button>
             </form>
         </section>
     </main>
+    <script src="main.js" defer></script>
 </body>
 </html>
