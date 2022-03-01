@@ -1,0 +1,31 @@
+{
+  "name": "twitch_bossfight",
+  "version": "1.0.0",
+  "description": "This is the Twitch BossFight app",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaikunGZ/Twitch_BossFight.git"
+  },
+  "keywords": [
+    "boss",
+    "fight",
+    "emote",
+    "subscribe",
+    "follow",
+    "twitch",
+    "bot"
+  ],
+  "author": "RaikunGaming",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaikunGZ/Twitch_BossFight/issues"
+  },
+  "homepage": "https://github.com/RaikunGZ/Twitch_BossFight#readme",
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
