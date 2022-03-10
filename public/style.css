@@ -35,29 +35,6 @@ section {
   padding: 2rem;
 }
 
-label[for="emote"],
-label[for="follow"],
-label[for="sub"],
-label[for="präfix"] {
-  padding: 1rem;
-}
-
-input[type="checkbox"] {
-  height: 18px;
-  width: 18px;
-  padding: 1rem;
-  margin-right: 1rem;
-}
-
-#präfix {
-  width: 10rem;
-}
-
-#basicSettings {
-  width: 95%;
-  height: 20vh;
-}
-
 #bossList {
   width: 25rem;
   height: 60rem;
@@ -120,14 +97,14 @@ canvas {
 form {
   width: 25rem;
   height: 60rem;
-  padding: 2rem;
+  padding: 1.5rem;
   border: solid;
   border-radius: 1rem;
 }
 
 input {
-  padding: 0.5rem;
-  margin-bottom: 1rem;
+  padding: 0.3rem 0.5rem;
+  margin-bottom: 0.8rem;
   border-radius: 1rem;
 }
 
@@ -135,24 +112,62 @@ label {
   font-size: 2rem;
 }
 
-select {
-  width: 90%;
-  margin-bottom: 1rem;
-  padding: 0.4rem;
-  border-radius: 1rem;
+input[type="checkbox"] {
+  height: 18px;
+  width: 18px;
+  margin: auto;
+  float: right;
 }
 
-button {
+#präfix {
+  width: 10rem;
+  float: right;
+}
+
+input[type="submit"] {
   width: 80%;
   margin: 2rem;
   font-size: 1.6rem;
   font-weight: 600;
-  padding: 0.7rem 2rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 1.5rem;
   border: none;
 }
 
-button:hover {
+input[type="submit"]:hover {
   background-color: #24262899;
   color: #eee;
+}
+
+#userID{
+  background-color: #ccc;
+  color: #000;
+  width: 8rem;
+  font-size: 1.5rem;
+  font-weight: 900;
+  padding: 0.2rem 1.1rem;
+  position: relative;
+  top: -2.75rem;
+  right: -11.5rem;
+  border: solid 0.1rem;
+  border-radius: 1rem;
+}
+
+@media screen and (max-width: 1487px){
+  canvas{
+    margin: 0.5rem;
+    order: 1;
+  }
+  form{
+    margin: 1rem;
+  }
+}
+
+@media screen and (max-width: 800px){
+  canvas{
+    margin: 1rem;
+  }
+  form{
+    margin: 1rem;
+  }
 }

@@ -4,7 +4,7 @@
   "description": "This is the Twitch BossFight app",
   "main": "main.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "main.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +26,9 @@
   },
   "homepage": "https://github.com/RaikunGZ/Twitch_BossFight#readme",
   "dependencies": {
-    "express": "^4.17.3"
+    "express": "^4.17.3",
+    "mongodb": "^4.4.1",
+    "nedb": "^1.8.0",
+    "node": "^17.5.0"
   }
 }

@@ -13,17 +13,6 @@
     <main>
         <section>
             <h1>Twitch Bossfight System</h1>
-            <form action="" method="post" id="basicSettings" class="form">
-                <h2>Trigger Settings</label></h2>
-                <label for="emote">Emotes</label>
-                <input type="checkbox" name="" id="emote" checked>
-                <label for="follow">Follows</label>
-                <input type="checkbox" name="" id="follow">
-                <label for="sub">Subs</label>
-                <input type="checkbox" name="" id="sub">
-                <label for="präfix">Emote Präfix</label>
-                <input type="text" id="präfix">
-            </form>
             <div id="bossList">
                 <div id="bossCard">
                     <div class="container">
@@ -37,32 +26,33 @@
                 </div>
             </div>
             <canvas>Drag and Drop Upload img</canvas>
-            <form action="" method="POST" class="form">
+            <form action="#" method="POST" id="form">
+                <div id="userID">ID: 0123</div>
                 <h2>Boss Settings</h2>
                 <label for="name">Name</label>
-                <input type="text" id="name">
+                <input type="text" name="bossName" id="name">
                 <label for="health">Health</label>
-                <input type="number" id="health">
+                <input type="number" name="health" id="health">
                 <label for="lv">Level</label>
-                <input type="number" id="lv">
-                <label for="dmg">Damage</label>
-                <input type="number" id="dmg">
+                <input type="number" name="level" id="lv">
                 <label for="x">Multiplier</label>
-                <input type="float" id="x">
+                <input type="float" name="multiplier" id="x">
                 <label for="msg">Text after Death</label>
-                <input type="text" id="msg">
+                <input type="text" name="msg" id="msg">
 
-                <label for="hit">Hit Animation</label>
-                <select name="" id="hit">
-                    <option value="">Normal Hit 1</option>
-                    <option value="">Normal Hit 2</option>
-                    <option value="">Emote Hit 1</option>
-                    <option value="">Emote Hit 2</option>
-                </select>
-                <button type="button" id="sendBTN">Save Boss</button>
+                <h2>Trigger Settings</label></h2>
+                <label for="emote">Emotes</label>
+                <input type="checkbox" name="emote" id="emote" checked><br>
+                <label for="follow">Follows</label>
+                <input type="checkbox" name="follow" id="follow"><br>
+                <label for="sub">Subs</label>
+                <input type="checkbox" name="sub" id="sub"><br>
+                <label for="präfix">Emote Präfix</label>
+                <input type="text" name="prefix" id="präfix">
+                <input type="submit" id="sendBTN" value="Save Boss">
             </form>
         </section>
     </main>
-    <script src="../server/main.js" defer></script>
+    <script src="./main.js" defer></script>
 </body>
 </html>
