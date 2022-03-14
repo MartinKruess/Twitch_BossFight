@@ -1,3 +1,5 @@
+export const idk = ""
+
 // API Key: btyrlvwdnygp86fa3ohjtxmar9pje9
 // Client ID: btyrlvwdnygp86fa3ohjtxmar9pje9
 // Twitch-API-Client-Secret: zbd1xfm9dmo1u412r5ybajv2nb6ame

@@ -2,6 +2,14 @@
 const express = require("express");
 const Datastore = require('nedb');
 const cors = require('cors'); // Sicherheit Ben! nachlesen
+const isLogedIn = false;
+
+loginDB.insert.loginName = "Martin";
+loginDB.insert.loginPW = "2222";
+
+// Routes
+const aprovements = require("./aprovements");
+app.use("/aprovements", aprovements);
 
 // Express to function -> listen@all
 const app = express();
@@ -38,31 +46,4 @@ app.post('/bossAPI', (request, response) => {
 })
 
 
-// insert LoginData to LoginDB -> success Login route
-app.post('/loginAPI', (request, response) => {
-  console.log('success')
-  console.log(request.body)
-  console.log(response)
-  const bossData = request.body;
-  bossDB.insert(bossData) //read
-  console.log(bossDB)
-  response.json({
-    loginName: request.body.loginName,
-    password: request.body.password,
-  })
-})
 
-
-// insert registerData to LoginDB -> successfull registrated register route
-app.post('/registerAPI', (request, response) => {
-  console.log('success')
-  console.log(request.body)
-  console.log(response)
-  const loginData = request.body;
-  loginDB.insert(loginData) // read and insert
-  console.log(bossDB)
-  response.json({
-    loginName: request.body.loginName,
-    password: request.body.password,
-  })
-})

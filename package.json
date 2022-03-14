@@ -3,8 +3,9 @@
   "version": "1.0.0",
   "description": "This is the Twitch BossFight app",
   "main": "main.js",
+  "types": "module",
   "scripts": {
-    "start": "main.js"
+    "start": "nodemon server.js"
   },
   "repository": {
     "type": "git",
