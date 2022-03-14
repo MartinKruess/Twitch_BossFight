@@ -44,7 +44,7 @@ app.post('/loginAPI', (request, response) => {
   console.log(request.body)
   console.log(response)
   const bossData = request.body;
-  bossDB.insert(bossData)
+  bossDB.insert(bossData) //read
   console.log(bossDB)
   response.json({
     loginName: request.body.loginName,
@@ -59,7 +59,7 @@ app.post('/registerAPI', (request, response) => {
   console.log(request.body)
   console.log(response)
   const loginData = request.body;
-  loginDB.insert(loginData)
+  loginDB.insert(loginData) // read and insert
   console.log(bossDB)
   response.json({
     loginName: request.body.loginName,
