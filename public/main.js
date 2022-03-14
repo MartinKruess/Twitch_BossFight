@@ -86,6 +86,26 @@ basicSettings.addEventListener("submit", (e) => {
   })
 });
 
+// login Button + Fetch
+loginEvent.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+
+fetch('http://127.0.0.1:3000/loginAPI', options).then(response => {
+    console.log(response);
+  })
+});
+
+// register Button + Fetch
+registerEvent.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+fetch('http://127.0.0.1:3000/registerAPI', options).then(response => {
+    console.log(response);
+  })
+});
+// passwort Sicherheit bcrypt npm i
+
+
 
 // socketIO backEnd to frontEnd
-// passwort Sicherheit bcrypt npm i
