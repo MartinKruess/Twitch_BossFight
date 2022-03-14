@@ -75,15 +75,17 @@ basicSettings.addEventListener("submit", (e) => {
     
     const options = {
     method: 'POST',
-    credentials:"include",
     headers: {
-      'Content-Type': 'app/json',
-      'Access-Control-Allow-Origin': 'http://127.0.0.1:5500',
+      'Content-Type': 'application/json',
     },
     body: JSON.stringify(bossData)
   }
 
-  fetch('/bossAPI', options).then(response => {
+  fetch('http://127.0.0.1:3000/bossAPI', options).then(response => {
     console.log(response);
   })
 });
+
+
+// socketIO backEnd to frontEnd
+// passwort Sicherheit bcrypt npm i

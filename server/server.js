@@ -1,20 +1,14 @@
 // initializing
 const express = require("express");
 const Datastore = require('nedb');
-//const cors = require('cors'); // Sicherheit Ben! nachlesen
+const cors = require('cors'); // Sicherheit Ben! nachlesen
 
 // Express to function -> listen@all
 const app = express();
 app.listen(3000, ()=> console.log("listening at 3000"))
-app.use(express.static('public'))
+app.use(cors());
 app.use(express.json({limit: "1mb"}))
-
-// app.use( // Sicherheit Ben! nachlesen
-//   cors({
-//     origin: "http://127.0.0.1:5500",
-//     methods:["POST"]
-//   })
-// )
+app.use(express.static('public'))
 
 // Create databases (login and boss)
 const loginDB = new Datastore('login.db');
@@ -22,9 +16,9 @@ const bossDB = new Datastore('boss.db');
 loginDB.loadDatabase();
 bossDB.loadDatabase();
 
-// insert Data to database and answer client
+// insert formData to bossDB -> bossSpawned
 app.post('/bossAPI', (request, response) => {
-  console.log('request!')
+  console.log('bossSpawned')
   console.log(request.body)
   console.log(response)
   const bossData = request.body;
@@ -40,5 +34,35 @@ app.post('/bossAPI', (request, response) => {
     followDMG: request.body.follow,
     subDMG: request.body.sub,
     prefix: request.body.prefix,
+  })
+})
+
+
+// insert LoginData to LoginDB -> success Login route
+app.post('/loginAPI', (request, response) => {
+  console.log('success')
+  console.log(request.body)
+  console.log(response)
+  const bossData = request.body;
+  bossDB.insert(bossData)
+  console.log(bossDB)
+  response.json({
+    loginName: request.body.loginName,
+    password: request.body.password,
+  })
+})
+
+
+// insert registerData to LoginDB -> successfull registrated register route
+app.post('/registerAPI', (request, response) => {
+  console.log('success')
+  console.log(request.body)
+  console.log(response)
+  const loginData = request.body;
+  loginDB.insert(loginData)
+  console.log(bossDB)
+  response.json({
+    loginName: request.body.loginName,
+    password: request.body.password,
   })
 })
