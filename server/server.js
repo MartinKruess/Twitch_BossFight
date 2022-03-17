@@ -22,9 +22,6 @@ const bossDB = new Datastore('boss.db');
 loginDB.loadDatabase();
 bossDB.loadDatabase();
 
-loginDB.insert.loginName = "Martin";
-loginDB.insert.loginPW = "2222";
-
 // insert formData to bossDB -> bossSpawned
 app.post('/bossAPI', (request, response) => {
   console.log('bossSpawned')
@@ -70,19 +67,26 @@ app.post('/login', (request, response) => {
 
 // insert registerData to LoginDB -> successfull registrated register route
 app.post('/register', (request, response) => {
-  console.log('register success')
-  console.log(request.body)
-  console.log(response)
+  
+  // console.log(response)
   const registerData = {
     loginName: request.body.registerName,
     loginPW: request.body.registerPW,
-    userName: request.body.registerTwitch,
-    twitchToken: request.body.registerToken,
-  };
-  (!loginDB.includes(registerData)) ? loginDB.insert(loginData) : document.querySelector("p").textContent = "Username is registrated!" // read and insert
-  console.log(bossDB)
-  response.json({
-    loginName: request.body.loginName,
-    password: request.body.password,
+    previewName: request.body.previewName, 
+  }
+
+  const isRegistered = false
+
+  loginDB.find({loginName : registerData.loginName }, function (err, docs) {
+
+    if(docs.length == 0){
+      loginDB.insert(registerData)
+      //console.log(request.body)
+      response.json({
+      loginName: request.body.loginName,
+      Msg: "registration success."})
+    }else{
+      console.log("Msg: Username is already registrated!")
+    }
   })
 })

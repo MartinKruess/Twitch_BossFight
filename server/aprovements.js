@@ -40,9 +40,13 @@ export const bossLoadHTML = () => {
         <input type="text" name="prefix" id="präfix">
         <input type="submit" id="sendBTN" value="Save Boss">
     </form>
-  `,
+  `
 }
-
+  
+// app.get("/", (request, response) => {
+//   console.log("success")
+//   response.send("Test")
+// })
 
 
 
