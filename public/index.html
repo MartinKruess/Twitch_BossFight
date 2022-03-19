@@ -4,66 +4,50 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="../images/logo_small_icon_only.png" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
     <script defer src="./main.js" ></script>
-    <title>Document</title>
+    <script src="https://kit.fontawesome.com/c817d0b348.js" crossorigin="anonymous"></script>
+    <title>StreamCol</title>
 </head>
 <body>
+    <nav>
+        <ul>
+            <li><img src="../images/logo_white_large.png" alt="StreamCol Logo"></li>
+            <li><span onclick="changeFunc('dash')">Dashboard</span></li>
+            <li><span onclick="changeFunc('boss')">Boss Creator</span></li>
+        </ul>
+    </nav>
     <main>
-        <section>
-            <form action="#" id="registerForm" method="post">
-                <input type="text" name="registerName" placeholder="RegName">
-                <input type="text" name="previewName" placeholder="prevName">
-                <input type="text" name="registerPW" placeholder="regPW">
-                <input type="text"  placeholder="controllPW">
-                
-                <input type="submit" id="registerBTN" value="Register">
-            </form>
-            <form action="#" id="loginForm" method="POST">
-                <input type="text" name="loginName" placeholder="Loginname" value="loginName">
-                <input type="password" name="loginPW" placeholder="Password" value="loginPW">
-                <input type="submit" id="loginBTN" value="Login">
-            </form>
-            <h1>Twitch Bossfight System</h1>
-            <div id="bossList">
-                <div id="bossCard">
-                    <div class="container">
-                        <div id="previewList"></div>
-                    </div>
-                    <div class="container">
-                        <div class="bossData">Testragon</div>
-                        <div class="bossData">Leben 100</div>
-                        <div class="bossData">abc</div>
-                    </div>
-                </div>
-            </div>
-            <canvas>Drag and Drop Upload img</canvas>
-            <form action="#" method="POST" id="form">
-                <div id="userID">ID: 0123</div>
-                <h2>Boss Settings</h2>
-                <label for="name">Name</label>
-                <input type="text" name="bossName" id="name">
-                <label for="health">Health</label>
-                <input type="number" name="health" id="health">
-                <label for="lv">Level</label>
-                <input type="number" name="level" id="lv">
-                <label for="x">Multiplier</label>
-                <input type="float" name="multiplier" id="x">
-                <label for="msg">Text after Death</label>
-                <input type="text" name="msg" id="msg">
+        <header>
+            <section>
 
-                <h2>Trigger Settings</label></h2>
-                <label for="emote">Emotes</label>
-                <input type="checkbox" name="emote" id="emote" checked><br>
-                <label for="follow">Follows</label>
-                <input type="checkbox" name="follow" id="follow"><br>
-                <label for="sub">Subs</label>
-                <input type="checkbox" name="sub" id="sub"><br>
-                <label for="präfix">Emote Präfix</label>
-                <input type="text" name="prefix" id="präfix">
-                <input type="submit" id="sendBTN" value="Save Boss">
-            </form>
+            </section>
+            <section id="status">
+
+            </section>
+            <section class="personal">
+                <input type="submit" value="Login" onclick="changeFunc('log')">
+                <input type="submit" value="Registrieren" onclick="changeFunc('reg')">
+            </section>
+        </header>
+        <section class="mainContainer">
+                <h1 id="landH1"><strong>StreamCol -</strong> Pimp It Up!</h1>
+                <div id="slogan">
+                    <ul>
+                        <li>Better Handling</li>
+                        <li>Better Performence</li>
+                        <li>Better Flow</li>
+                        <li>Better Content</li>
+                    </ul>
+                    <input type="submit" value="Jetzt Durchstarten">
+                </div>
+                <div class="video"></div>
+                <div class="imgLine">
+                    <img src="../images/twitch.svg" alt="">
+                    <img src="../images/youtube.svg" alt="">
+                    <img src="../images/fbGaming.svg" alt="">
+                </div>
         </section>
     </main>
 </body>

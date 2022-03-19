@@ -2,6 +2,7 @@
 const express = require("express");
 const Datastore = require('nedb');
 const cors = require('cors'); // Sicherheit Ben! nachlesen
+const { table } = require("console");
 const isLogedIn = false;
 
 
@@ -25,16 +26,15 @@ bossDB.loadDatabase();
 // insert formData to bossDB -> bossSpawned
 app.post('/bossAPI', (request, response) => {
   console.log('bossSpawned')
-  console.log(request.body)
-  console.log(response)
+  // console.log(request.body)
+  // console.log(response)
   const bossData = request.body;
   bossDB.insert(bossData)
-  console.log(bossDB)
+  //console.log(bossDB)
   response.json({
     bossName: request.body.bossName,
     health: request.body.health,
     level: request.body.level,
-    multiplier: request.body.multiplier,
     deathMSG: request.body.deathMSG,
     emoteDMG: request.body.emote,
     followDMG: request.body.follow,
@@ -43,32 +43,37 @@ app.post('/bossAPI', (request, response) => {
   })
 })
 
-app.get("/", (request, response) => {
-  console.log("success")
-  response.send("Test")
-})
-
 // insert LoginData to LoginDB -> success Login route
 app.post('/login', (request, response) => {
-  console.log('login success')
-  console.log(request.body)
-  console.log(response)
-  const loginNmAprove = request.body.loginName;
-  const loginPWAprove = request.body.loginPW
-  const loginObjInDB = loginDB.find(request.body.loginName)
-  console.log(loginObjInDB)
-  const isLogedIn = (loginNmAprove === loginObjInDB.loginName && loginPWAprove === loginObjInDB.loginPW) ? true : false;
+  console.log('try to login...')
+  //console.log(request.body)
+  //console.log(response)
 
-  return response.json({
-      isLogedIn,
-      _id: loginObjInDB._id,
-  });
+  const loginData = {
+    loginName: request.body.loginName,
+    loginPW: request.body.loginPW,
+  }
+
+  const isLogedIn = false
+
+  loginDB.find({loginName : loginData.loginName }, function (err, docs) {
+
+    if(loginData.loginName == docs[0].loginName && loginData.loginPW == docs[0].loginPW){
+      response.json({
+      loginName: request.body.loginName,
+      _id: docs._id
+      })
+      console.log(`Msg: login success → ${docs.loginName}`)
+    }else{
+      console.log("Msg: Daten falsch oder nicht Registriert!")
+    }
+  })
 })
 
 // insert registerData to LoginDB -> successfull registrated register route
 app.post('/register', (request, response) => {
   
-  // console.log(response)
+  console.log('try to registrate...')
   const registerData = {
     loginName: request.body.registerName,
     loginPW: request.body.registerPW,
@@ -81,10 +86,10 @@ app.post('/register', (request, response) => {
 
     if(docs.length == 0){
       loginDB.insert(registerData)
-      //console.log(request.body)
       response.json({
-      loginName: request.body.loginName,
-      Msg: "registration success."})
+      loginName: request.body.loginName
+      })
+      console.log(`Msg: registration success → ${docs.loginName}`)
     }else{
       console.log("Msg: Username is already registrated!")
     }
