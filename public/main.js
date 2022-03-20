@@ -1,7 +1,9 @@
 // Data from Form -> Server
-//const { response } = require("express");
 
-const changeFunc = (onclickInput) => {
+const response = require("express");
+
+async function changeFunc(onclickInput) {
+//const changeFunc = (onclickInput) => 
   const changer = document.querySelector('.mainContainer')
 
   switch (onclickInput) {
@@ -37,9 +39,10 @@ const changeFunc = (onclickInput) => {
       `
       break;
     case "dash":
-      
+      changer.innerHTML =  `test`
       break;
-    case "boss":
+      
+      case "boss":
       changer.innerHTML =  `<h1>Twitch Bossfight System</h1>
       <div id="bossList">
           <div id="bossCard">
@@ -118,6 +121,8 @@ basicSettings.addEventListener("submit", (e) => {
   })
 });
 
+console.log(response._id)
+
 
 const loginEvent = document.getElementById('loginForm');
 // login Button + Fetch
@@ -127,7 +132,8 @@ loginEvent.addEventListener("submit", (e) => {
   let loginName = document.querySelector("input[name='loginName']").value
   let loginPW = document.querySelector("input[name='loginPW']").value
   const loginData = {loginName, loginPW};
-
+  console.log(loginData)
+  
   const options = {
     method: 'POST',
     headers: {
@@ -139,12 +145,6 @@ loginEvent.addEventListener("submit", (e) => {
   fetch('http://127.0.0.1:3000/login', options).then(response => {
       console.log(response);
 
-      try {
-        if(response._id)
-          bossLoadHTML()
-      } catch (error) {
-        
-      }
   });
 })
 
