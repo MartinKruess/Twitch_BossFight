@@ -13,7 +13,7 @@
 body {
   background-color: #000027;
   color: #eee;
-  max-height: 100vh;
+  min-height: 100vh;
   overflow: hidden;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -39,7 +39,7 @@ h1 strong {
 
 #landH1 {
   background-image: url("../images/Comp_1.webp") center/cover;
-  width: 70rem;
+  width: 80rem;
   text-align: left;
   margin-right: 15vw;
 }
@@ -54,8 +54,6 @@ h1 strong {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  position: absolute;
-  left: 12.5vw;
 }
 
 #slogan ul li {
@@ -77,6 +75,7 @@ nav {
   height: 100vh;
   text-align: center;
   border-right: #2f2f2f solid 5px;
+  position: fixed;
 }
 
 ul li {
@@ -96,17 +95,13 @@ header {
 }
 
 header section {
-  width: 40%;
+  width: 60%;
   padding: 1rem;
   border-bottom: solid;
 }
 
-#searchbar {
-  width: 30%;
-}
-
 .personal {
-  width: 30%;
+  width: 40%;
   padding: 1rem;
 }
 
@@ -326,7 +321,7 @@ input[type="submit"]:hover {
 .mainContainer {
   background: url("../images/futuristic-background-with-colorful-glowing-abstract-neon-lights.jpg") center/cover;
   background-color: #00000095;
-  width: 90vw;
+  width: 100vw;
   height: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -339,7 +334,7 @@ input[type="submit"]:hover {
           align-items: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding: 2rem;
+  padding: 2rem 2rem 4rem 20rem;
 }
 
 .video {

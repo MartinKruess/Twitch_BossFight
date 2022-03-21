@@ -18,10 +18,6 @@ app.get('/', (req, res) => {
 })
 
 
-// Routes
-// const aprovements = require("./aprovements");
-// app.use("/aprovements", aprovements);
-
 // Create databases (login and boss)
 const loginDB = new Datastore('login.db');
 const bossDB = new Datastore('boss.db');
@@ -48,8 +44,6 @@ app.post('/bossAPI', (request, response) => {
   })
 })
 
-
-
 // insert LoginData to LoginDB -> success Login route
 app.post('/login', (request, response) => {
   console.log('try to login...')
@@ -61,18 +55,19 @@ app.post('/login', (request, response) => {
     loginPW: request.body.loginPW,
   }
 
-  const isLogedIn = false
+  let isLogedIn = false
 
   loginDB.find({loginName : loginData.loginName }, function (err, docs) {
 
     if(loginData.loginName == docs[0].loginName && loginData.loginPW == docs[0].loginPW){
       response.json({
-      loginName: request.body.loginName,
-      _id: docs._id
+      previewName: docs.previewName,
+      id: docs._id
       })
-      console.log(`Msg: login success → ${docs.loginName}`)
+      console.log(`Msg: Login success → true`)
+      console.log(response.body)
     }else{
-      console.log("Msg: Daten falsch oder nicht Registriert!")
+      console.log("Msg: Login success → false")
     }
   })
 })
@@ -96,9 +91,9 @@ app.post('/register', (request, response) => {
       response.json({
       loginName: request.body.loginName
       })
-      console.log(`Msg: registration success → ${docs.loginName}`)
+      console.log(`Msg: Registration success → true`)
     }else{
-      console.log("Msg: Username is already registrated!")
+      console.log("Msg: Registration success → false")
     }
   })
 })

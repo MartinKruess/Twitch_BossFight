@@ -27,6 +27,7 @@
   },
   "homepage": "https://github.com/RaikunGZ/Twitch_BossFight#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "mongodb": "^4.4.1",
