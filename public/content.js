@@ -1,4 +1,4 @@
-import {eventFuncLog, eventFuncReg, eventFuncBosses} from "./modules.js";
+import { eventFuncLog, eventFuncReg, eventFuncBosses } from "./modules.js";
 
 export const changeFunc = (onclickInput) => {
     const changer = document.querySelector('.mainContainer')
@@ -88,16 +88,18 @@ export const changeFunc = (onclickInput) => {
         default:
             break;
     }
-    
+
     const dashboard = document.querySelector('.dashboard');
-    dashboard.addEventListener("click", (e) => {
-        changeFunc('dash')
-    })
+    if (dashboard !== null) {
+        dashboard.addEventListener("click", (e) => {
+            changeFunc('dash')
+        })
+    }
 
     const bossCreater = document.querySelector('.boss-creater');
-    bossCreater.addEventListener("click", (e) => {
-        changeFunc('boss');
-    })
+    if (bossCreater !== null) {
+        bossCreater.addEventListener("click", (e) => {
+            changeFunc('boss')
+        })
+    }
 }
-
-

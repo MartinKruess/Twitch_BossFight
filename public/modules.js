@@ -3,13 +3,12 @@ export const eventFuncLog = () => {
     const loginEvent = document.getElementById('loginForm');
     
     if (loginEvent !== null) {
-      loginEvent.addEventListener("submit", (e) => {
+        loginEvent.addEventListener("submit", (e) => {
         e.preventDefault();
   
         let loginName = document.querySelector("input[name='loginName']").value
         let loginPW = document.querySelector("input[name='loginPW']").value
         const loginData = { loginName, loginPW };
-        console.log(loginData)
   
         const options = {
           method: 'POST',
@@ -20,7 +19,7 @@ export const eventFuncLog = () => {
         }
   
         fetch('http://127.0.0.1:3000/login', options).then(response => {
-          console.log(response.body);
+          console.log(response);
         });
       })
       //changeFunc('log');
