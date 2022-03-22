@@ -3,9 +3,9 @@
 import { changeFunc } from "./content.js";
 
 let isLogedIn = false
-async function login(UserID, _id) {
+async function login(isLogedIn, _id) {
 
-  if (useObj.u) {
+  if (isLogedIn === true) {
     document.querySelector('body').innerHTML = `<nav>
     <ul>
         <li><img src="../images/logo_white_large.png" alt="StreamCol Logo"></li>
