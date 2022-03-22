@@ -2,14 +2,10 @@
 
 import { changeFunc } from "./content.js";
 
-const UserID = "";
-
 let isLogedIn = false
 async function login(UserID, _id) {
 
-  isLogedIn = await UserID === _id ? true : false
-
-  if (isLogedIn) {
+  if (useObj.u) {
     document.querySelector('body').innerHTML = `<nav>
     <ul>
         <li><img src="../images/logo_white_large.png" alt="StreamCol Logo"></li>
@@ -35,4 +31,5 @@ registerSide.addEventListener("click", (e) => {
 // UserID === _id ? isLogedIn = true : console.log("Error: Login Failed by Password or UserName")
 // isLogedIn = true -> see all websides || isLogedIn = false -> only see Landingpage
 // passwort Sicherheit bcrypt npm i
+// JWT - Zeitbegrenztes Login
 // socketIO backEnd to frontEnd
