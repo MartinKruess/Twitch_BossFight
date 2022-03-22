@@ -64,8 +64,8 @@ app.post('/login', (request, response) => {
         console.log(hashedPW)
         if (hashedPW) {
           response.json({
-            previewName: docs.previewName,
-            id: docs._id
+            previewName: docs[0].previewName,
+            id: docs[0]._id
           })
         } else {
           console.log("Msg: Login success → false")

@@ -1,6 +1,7 @@
 // login Button + Fetch
 export const eventFuncLog = () => {
     const loginEvent = document.getElementById('loginForm');
+    let userData = {}
     
     if (loginEvent !== null) {
         loginEvent.addEventListener("submit", (e) => {
@@ -9,7 +10,7 @@ export const eventFuncLog = () => {
         let loginName = document.querySelector("input[name='loginName']").value
         let loginPW = document.querySelector("input[name='loginPW']").value
         const loginData = { loginName, loginPW };
-  
+        
         const options = {
           method: 'POST',
           headers: {
@@ -18,13 +19,17 @@ export const eventFuncLog = () => {
           body: JSON.stringify(loginData)
         }
   
-        fetch('http://127.0.0.1:3000/login', options).then(response => {
-          console.log(response);
-        });
-      })
-      //changeFunc('log');
+        fetch('http://127.0.0.1:3000/login', options)
+        .then(response => response.json())
+        .then(data => {
+          userData = data
+          localStorage.setItem("userData", JSON.stringify(userData)) // stringify = übersetze in str
+        })
+        })
     }
   }
+
+  const userData = JSON.parse(localStorage.getItem("userData")) // parse = übersetze zu json
   
   // register Button + Fetch
   export const eventFuncReg = () => {
@@ -45,7 +50,6 @@ export const eventFuncLog = () => {
           objUser[key] = formData.get(key)
         }
         users.push(objUser)
-  
         const userData = objUser;
   
         const options = {
@@ -58,13 +62,11 @@ export const eventFuncLog = () => {
   
         fetch('http://127.0.0.1:3000/register', options).then(response => {
           console.log(response);
-  
+
         });
       })
-      //changeFunc('reg');
     }
   }
-  
   
   // Upload Bosses to DB
   export const eventFuncBosses = () => {

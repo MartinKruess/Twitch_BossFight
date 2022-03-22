@@ -28,8 +28,5 @@ registerSide.addEventListener("click", (e) => {
 })
 
 
-// UserID === _id ? isLogedIn = true : console.log("Error: Login Failed by Password or UserName")
-// isLogedIn = true -> see all websides || isLogedIn = false -> only see Landingpage
-// passwort Sicherheit bcrypt npm i
 // JWT - Zeitbegrenztes Login
 // socketIO backEnd to frontEnd
