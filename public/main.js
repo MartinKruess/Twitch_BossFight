@@ -2,6 +2,9 @@
 
 import { changeFunc } from "./content.js";
 
+
+
+
 const userData = JSON.parse(localStorage.getItem("userData"))
 const login = (userData) => {
 
@@ -23,18 +26,19 @@ const login = (userData) => {
       <section class="personal">
           <div class="profilContainer">
               <div id="inBoxContainer">
-                  <label for="UserName">Fieserkillerkeks</label>
+                  <div id="userName">Fieserkillerkeks</div>
                   <label type="text" id="profilBtn"></label>
               </div>
               <ul id="profilDropdown">
                   <li>Profil</li>
                   <li>Settings</li>
-                  <li>Logout</li>
+                  <li class="logoutSide">Logout</li>
               </ul>
           </div>
       </section>
     `
   }
+  changeFunc('dash')
 }
 
 login(userData)
@@ -65,6 +69,14 @@ const bossCreater = document.querySelector('.boss-creater');
 if (bossCreater !== null) {
     bossCreater.addEventListener("click", (e) => {
         changeFunc('boss')
+    })
+}
+
+const logout = document.querySelector('.logout');
+if (logout !== null) {
+    logout.addEventListener("click", (e) => {
+        changeFunc('out')
+        console.log("out")
     })
 }
 // localStorage.clear() by logout

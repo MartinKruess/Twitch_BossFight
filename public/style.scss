@@ -313,7 +313,7 @@ input[type="submit"]:hover {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: 2rem 2rem 4rem 20rem;
+  padding: 2rem 2rem 8rem 22rem;
 }
 
 .video {
@@ -335,86 +335,101 @@ input[type="submit"]:hover {
   width: 6rem;
   height: 6rem;
   display: flex;
-  justify-content: center;
+  justify-content: end;
   align-items: center;
   flex-wrap: wrap;
   position: relative;
-  border: solid;
-  animation: slide 6s;
+  overflow: hidden;
+  // animation: slide 6s;
 }
 
 #inBoxContainer{
   width: 100%;
   height: 5.5rem;
   display: flex;
-  justify-content: space-between;
+  justify-content: end;
   align-items: center;
+  text-align: center;
   padding: 0.7rem;
-  border: solid red;
 }
 
-label[for="UserName"]{
-  display: none;
-  margin-right: 1rem;
+#userName{
+  width: 80%;
+  height: 5.5rem;
+  text-align: center;
+  padding: 1.8rem;
 }
 
 #profilBtn{
   background: URL("../images/default_profile.png") center/cover;
-  width: 100%;
-  height: 100%;
+  min-width: 4rem;
+  max-width: 4rem;
+  height: 4rem;
   padding: 0.7rem 0.7rem;
   border-radius: 50%;
   border: #eee 2px solid;
 }
 
 #profilDropdown{
-  display: none;
-  background-color: red;
+  background-color: #24262899;
   width: 100%;
-  padding: 1rem;
-  margin-top:1rem;
+  padding: 1.3rem;
+  margin-top:0.8rem;
+  font-weight: 600;
+  border:solid;
+  border-radius: 2rem;
 }
 
+#profilDropdown li:hover{
+  color: #21a1cf;
+}
 
-    .profilContainer{
-      width: 6rem;
-      height: 6rem;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-wrap: wrap;
-      position: absolute;
-      top: 0.5rem;
-      left: 75%;
-      border: solid;
-      animation: slide 2s;
-    }
+.profilContainer:hover{
+  animation: slide 3s forwards;
+}
+@keyframes slide {
+  25%{
+    width: 25rem;
+    height: 6rem;
+  }
+  100%{
+    width: 25rem;
+    height: 16.4rem;
+  }
+}
 
-
-    .profilContainer:hover #profilBtn{
-      width: 5rem;
-      height: 5rem;
-      justify-content: end;
-      border: rgb(0, 234, 251) 2px solid;
-    }
-
-
-    .profilContainer:hover{
-      width: 25rem;
-      height: auto;
-      transition: 2s;
-    }
-
- 
-    .profilContainer:hover #profilDropdown, .profilContainer:hover label[for="UserName"] {
-      display: block;
-      transition: 2s;
-    }
-
-
-// alle hover effekte
+.profilContainer:hover #profilDropdown {
+  animation: slide 2s ease-in-out;
+}
 
 // ---------Dashboard---------
+
+.gridContainer{
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(3, 1fr) 5rem;
+  column-gap: 0.7rem;
+  row-gap: 0.7rem;
+  margin-top: 1.5rem;
+}
+
+.gridContainer div div{
+  background-color: #24262899;
+  height: 100%;
+  padding: 0.5rem;
+  border-radius: 1rem;
+  grid-area: 1/1/2/2;
+}
+
+.lastStream{
+  grid-area: 1/5/3/6;
+}
+
+.gridOverview{
+  grid-area: 2/1/4/5;
+}
 
 // ---------Seite3---------
 

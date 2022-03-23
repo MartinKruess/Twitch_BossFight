@@ -79,8 +79,6 @@ app.post('/login', (request, response) => {
   })
 })
 
-
-
 // insert registerData to LoginDB -> successfull registrated register route
 app.post('/register', (request, response) => {
 

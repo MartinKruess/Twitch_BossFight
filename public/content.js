@@ -38,49 +38,91 @@ export const changeFunc = (onclickInput) => {
             eventFuncReg()
             break;
         case "dash":
-            changer.innerHTML = `Work in progress...`
+            changer.innerHTML = `
+            <h1 id="landH1">Dashboard</h1>
+                <div class="gridContainer">
+                    <div>
+                        <div>
+                            <h2>Statistik</h2>
+
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h2>Follower</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h2>Subscriber</h2>
+
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h2>Affiliate</h2>
+                        </div>
+                    </div>
+                    <div class="lastStream">
+                        <div>
+                            <h2>Last Stream</h2>
+                        </div>
+                    </div>
+                    <div class="gridOverview">
+                        <div>
+                            <h2>Overview</h2>
+                        </div>
+                    </div>
+                    <div>
+                        <div>
+                            <h2>News</h2>
+                        </div>
+                    </div>
+                </div>
+            `
             break;
 
         case "boss":
-            changer.innerHTML = `<h1>Twitch Bossfight System</h1>
-            <div id="bossList">
-                <div id="bossCard">
-                    <div class="container">
-                        <div id="previewList"></div>
-                    </div>
-                    <div class="container">
-                        <div class="bossData">Testragon</div>
-                        <div class="bossData">Leben 100</div>
-                        <div class="bossData">abc</div>
+            changer.innerHTML = `
+            <h1>Twitch Bossfight System</h1>
+                <div id="bossList">
+                    <div id="bossCard">
+                        <div class="container">
+                            <div id="previewList"></div>
+                        </div>
+                        <div class="container">
+                            <div class="bossData">Testragon</div>
+                            <div class="bossData">Leben 100</div>
+                            <div class="bossData">abc</div>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="preview"><strong>Drag&Drop</strong></div>
-            <form action="#" method="POST" id="form">
-                <div id="userID">ID: 0123</div>
-                <h2>Boss Settings</h2>
-                <label for="name">Name</label>
-                <input type="text" name="bossName" id="name">
-                <label for="health">Health</label>
-                <input type="number" name="health" id="health">
-                <label for="lv">Level</label>
-                <input type="number" name="level" id="lv">
-                <label for="x">Multiplier</label>
-                <input type="float" name="multiplier" id="x">
-                <label for="msg">Text after Death</label>
-                <input type="text" name="msg" id="msg">
+                <div class="preview"><strong>Drag&Drop</strong></div>
+                <form action="#" method="POST" id="form">
+                    <div id="userID">ID: 0123</div>
+                    <h2>Boss Settings</h2>
+                    <label for="name">Name</label>
+                    <input type="text" name="bossName" id="name">
+                    <label for="health">Health</label>
+                    <input type="number" name="health" id="health">
+                    <label for="lv">Level</label>
+                    <input type="number" name="level" id="lv">
+                    <label for="x">Multiplier</label>
+                    <input type="float" name="multiplier" id="x">
+                    <label for="msg">Text after Death</label>
+                    <input type="text" name="msg" id="msg">
 
-                <h2>Trigger Settings</label></h2>
-                <label for="emote">Emotes</label>
-                <input type="checkbox" name="emote" id="emote" checked><br>
-                <label for="follow">Follows</label>
-                <input type="checkbox" name="follow" id="follow"><br>
-                <label for="sub">Subs</label>
-                <input type="checkbox" name="sub" id="sub"><br>
-                <label for="präfix">Emote Präfix</label>
-                <input type="text" name="prefix" id="präfix">
-                <input type="submit" id="sendBTN" value="Save Boss">
-            </form>
+                    <h2>Trigger Settings</label></h2>
+                    <label for="emote">Emotes</label>
+                    <input type="checkbox" name="emote" id="emote" checked><br>
+                    <label for="follow">Follows</label>
+                    <input type="checkbox" name="follow" id="follow"><br>
+                    <label for="sub">Subs</label>
+                    <input type="checkbox" name="sub" id="sub"><br>
+                    <label for="präfix">Emote Präfix</label>
+                    <input type="text" name="prefix" id="präfix">
+                    <input type="submit" id="sendBTN" value="Save Boss">
+                </form>
             `;
             eventFuncBosses()
             break;
