@@ -37,6 +37,10 @@ h1 strong {
   letter-spacing: 0.75rem;
 }
 
+header {
+  height: 7rem;
+}
+
 #landH1 {
   background-image: url("../images/Comp_1.webp") center/cover;
   width: 80rem;
@@ -71,6 +75,7 @@ h1 strong {
 nav {
   background-color: #242628;
   width: clamp(13rem, 25%, 20rem);
+  height: 4rem;
   padding: 1.5rem;
   height: 100vh;
   text-align: center;
@@ -353,6 +358,108 @@ input[type="submit"]:hover {
       -ms-flex-pack: space-evenly;
           justify-content: space-evenly;
   padding: 0.75rem;
+}
+
+.profilContainer {
+  width: 6rem;
+  height: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: relative;
+  border: solid;
+  -webkit-animation: slide 6s;
+          animation: slide 6s;
+}
+
+#inBoxContainer {
+  width: 100%;
+  height: 5.5rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.7rem;
+  border: solid red;
+}
+
+label[for="UserName"] {
+  display: none;
+  margin-right: 1rem;
+}
+
+#profilBtn {
+  background: URL("../images/default_profile.png") center/cover;
+  width: 100%;
+  height: 100%;
+  padding: 0.7rem 0.7rem;
+  border-radius: 50%;
+  border: #eee 2px solid;
+}
+
+#profilDropdown {
+  display: none;
+  background-color: red;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.profilContainer {
+  width: 6rem;
+  height: 6rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  position: absolute;
+  top: 0.5rem;
+  left: 75%;
+  border: solid;
+  -webkit-animation: slide 2s;
+          animation: slide 2s;
+}
+
+.profilContainer:hover #profilBtn {
+  width: 5rem;
+  height: 5rem;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: end;
+  border: #00eafb 2px solid;
+}
+
+.profilContainer:hover {
+  width: 25rem;
+  height: auto;
+  -webkit-transition: 2s;
+  transition: 2s;
+}
+
+.profilContainer:hover #profilDropdown, .profilContainer:hover label[for="UserName"] {
+  display: block;
+  -webkit-transition: 2s;
+  transition: 2s;
 }
 
 @media screen and (max-width: 1487px) {

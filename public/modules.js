@@ -29,7 +29,7 @@ export const eventFuncLog = () => {
     }
   }
 
-  const userData = JSON.parse(localStorage.getItem("userData")) // parse = übersetze zu json
+  //const userData = JSON.parse(localStorage.getItem("userData")) // parse = übersetze zu json
   
   // register Button + Fetch
   export const eventFuncReg = () => {

@@ -89,17 +89,5 @@ export const changeFunc = (onclickInput) => {
             break;
     }
 
-    const dashboard = document.querySelector('.dashboard');
-    if (dashboard !== null) {
-        dashboard.addEventListener("click", (e) => {
-            changeFunc('dash')
-        })
-    }
-
-    const bossCreater = document.querySelector('.boss-creater');
-    if (bossCreater !== null) {
-        bossCreater.addEventListener("click", (e) => {
-            changeFunc('boss')
-        })
-    }
+   
 }

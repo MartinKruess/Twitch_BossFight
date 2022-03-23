@@ -33,6 +33,10 @@ h1 strong{
   letter-spacing: 0.75rem;
 }
 
+header{
+  height: 7rem;
+}
+
 #landH1{
   background-image: url("../images/Comp_1.webp") center/cover;
   width: 80rem;
@@ -63,6 +67,7 @@ h1 strong{
 nav{
   background-color: #242628;
   width: clamp(13rem, 25%, 20rem);
+  height: 4rem;
   padding: 1.5rem;
   height: 100vh;
   text-align: center;
@@ -325,8 +330,97 @@ input[type="submit"]:hover {
   padding: 0.75rem;
 }
 
+// ---------LogedIn Header---------
+.profilContainer{
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  position: relative;
+  border: solid;
+  animation: slide 6s;
+}
 
-// ---------RESPONSIVE--------
+#inBoxContainer{
+  width: 100%;
+  height: 5.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.7rem;
+  border: solid red;
+}
+
+label[for="UserName"]{
+  display: none;
+  margin-right: 1rem;
+}
+
+#profilBtn{
+  background: URL("../images/default_profile.png") center/cover;
+  width: 100%;
+  height: 100%;
+  padding: 0.7rem 0.7rem;
+  border-radius: 50%;
+  border: #eee 2px solid;
+}
+
+#profilDropdown{
+  display: none;
+  background-color: red;
+  width: 100%;
+  padding: 1rem;
+  margin-top:1rem;
+}
+
+
+    .profilContainer{
+      width: 6rem;
+      height: 6rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      position: absolute;
+      top: 0.5rem;
+      left: 75%;
+      border: solid;
+      animation: slide 2s;
+    }
+
+
+    .profilContainer:hover #profilBtn{
+      width: 5rem;
+      height: 5rem;
+      justify-content: end;
+      border: rgb(0, 234, 251) 2px solid;
+    }
+
+
+    .profilContainer:hover{
+      width: 25rem;
+      height: auto;
+      transition: 2s;
+    }
+
+ 
+    .profilContainer:hover #profilDropdown, .profilContainer:hover label[for="UserName"] {
+      display: block;
+      transition: 2s;
+    }
+
+
+// alle hover effekte
+
+// ---------Dashboard---------
+
+// ---------Seite3---------
+
+// ---------Seite4---------
+
+// ---------RESPONSIVE---------
 
 @media screen and (max-width: 1487px){
   canvas{
