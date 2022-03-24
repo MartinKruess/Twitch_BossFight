@@ -5,15 +5,20 @@ import { changeFunc } from "./content.js";
 
 
 
-const userData = JSON.parse(localStorage.getItem("userData"))
-const login = (userData) => {
+const uData = JSON.parse(localStorage.getItem("userData"))
+const login = (uData) => {
 
-  if (userData) {
+  if (uData) {
     document.querySelector('.navContainer').innerHTML = `
     <nav>
       <ul>
           <li><img src="../images/logo_white_large.png" alt="StreamCol Logo"></li>
+          <li>StreamInfos</li>
           <li><span class="dashboard">Dashboard</span></li>
+          <li><span class="analyse" >Analyze</span></li>
+          <li>Ressourcen</li>
+          <li><span class="overlay" >Overlays</span></li>
+          <li><span class="alert" >Alerts</span></li>
           <li><span class="boss-creater" >Boss Creator</span></li>
       </ul>
     </nav>
@@ -37,11 +42,13 @@ const login = (userData) => {
           </div>
       </section>
     `
+    document.querySelector('#userName').textContent = uData.previewName
+    
   }
-  changeFunc('dash')
+  changeFunc('dash') // always visiable... oder keinen Zugriff
 }
 
-login(userData)
+login(uData)
 
 // Change content via Eventlistener not on onclick
 const loginSide = document.querySelector('.loginSide');
@@ -61,22 +68,22 @@ if (registerSide !== null) {
 const dashboard = document.querySelector('.dashboard');
 if (dashboard !== null) {
     dashboard.addEventListener("click", (e) => {
-        changeFunc('dash')
+      changeFunc('dash')
     })
 }
 
 const bossCreater = document.querySelector('.boss-creater');
 if (bossCreater !== null) {
     bossCreater.addEventListener("click", (e) => {
-        changeFunc('boss')
+      changeFunc('boss')
     })
 }
 
 const logout = document.querySelector('.logout');
 if (logout !== null) {
     logout.addEventListener("click", (e) => {
-        changeFunc('out')
-        console.log("out")
+      localStorage.clear("userData");
+      changeFunc('out')
     })
 }
 // localStorage.clear() by logout

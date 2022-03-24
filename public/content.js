@@ -1,4 +1,5 @@
 import { eventFuncLog, eventFuncReg, eventFuncBosses } from "./modules.js";
+const uData = JSON.parse(localStorage.getItem("userData"))
 
 export const changeFunc = (onclickInput) => {
     const changer = document.querySelector('.mainContainer')
@@ -99,7 +100,7 @@ export const changeFunc = (onclickInput) => {
                 </div>
                 <div class="preview"><strong>Drag&Drop</strong></div>
                 <form action="#" method="POST" id="form">
-                    <div id="userID">ID: 0123</div>
+                    <input name="uID" id="userID" value="ID: 0123">
                     <h2>Boss Settings</h2>
                     <label for="name">Name</label>
                     <input type="text" name="bossName" id="name">
@@ -107,8 +108,6 @@ export const changeFunc = (onclickInput) => {
                     <input type="number" name="health" id="health">
                     <label for="lv">Level</label>
                     <input type="number" name="level" id="lv">
-                    <label for="x">Multiplier</label>
-                    <input type="float" name="multiplier" id="x">
                     <label for="msg">Text after Death</label>
                     <input type="text" name="msg" id="msg">
 
@@ -124,10 +123,29 @@ export const changeFunc = (onclickInput) => {
                     <input type="submit" id="sendBTN" value="Save Boss">
                 </form>
             `;
-            eventFuncBosses()
+            document.querySelector('#userID').value = uData.id
+            eventFuncBosses(uData.id)
             break;
 
         default:
+            changer.innerHTML = `
+                <h1 id="landH1"><strong>StreamCol -</strong> Pimp It Up!</h1>
+                <div id="slogan">
+                    <ul>
+                        <li>Better Handling</li>
+                        <li>Better Performence</li>
+                        <li>Better Flow</li>
+                        <li>Better Content</li>
+                    </ul>
+                    <input type="submit" value="Jetzt Durchstarten">
+                </div>
+                <div class="video"></div>
+                <div class="imgLine">
+                    <img src="../images/twitch.svg" alt="">
+                    <img src="../images/youtube.svg" alt="">
+                    <img src="../images/fbGaming.svg" alt="">
+                </div>
+                `
             break;
     }
 

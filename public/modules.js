@@ -69,7 +69,7 @@ export const eventFuncLog = () => {
   }
   
   // Upload Bosses to DB
-  export const eventFuncBosses = () => {
+  export const eventFuncBosses = (userID) => {
     const basicSettings = document.getElementById('form');
     if (basicSettings) {
       const bosses = [];
@@ -78,7 +78,7 @@ export const eventFuncLog = () => {
         const formData = new FormData(basicSettings);
         console.log(formData.entries());
   
-        const objBoss = {}
+        const objBoss = {uID: userID}
   
         for (let key of formData.keys()) {
           console.log(formData.get(key))
