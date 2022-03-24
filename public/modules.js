@@ -1,3 +1,5 @@
+import { changeFunc } from "./content.js";
+
 // login Button + Fetch
 export const eventFuncLog = () => {
     const loginEvent = document.getElementById('loginForm');
@@ -25,7 +27,12 @@ export const eventFuncLog = () => {
           userData = data
           localStorage.setItem("userData", JSON.stringify(userData)) // stringify = übersetze in str
         })
+        .then(changeFunc('dash'))
         })
+        // const uData = JSON.parse(localStorage.getItem("userData"))
+        // if (uData) {
+        //   changeFunc('dash')
+        // }
     }
   }
 

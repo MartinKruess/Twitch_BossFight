@@ -17,6 +17,7 @@ export const changeFunc = (onclickInput) => {
                 <p id="textPanel">Noch keinen Account? <span onclick="changeFunc('reg')">zur Registrierung</span></p>
                 </form>
             `;
+            
             eventFuncLog()
             break;
         case "reg":
@@ -39,6 +40,40 @@ export const changeFunc = (onclickInput) => {
             eventFuncReg()
             break;
         case "dash":
+            document.querySelector('.navContainer').innerHTML = `
+                <nav>
+                <ul>
+                    <li><img src="../images/logo_white_large.png" alt="StreamCol Logo"></li>
+                    <li>StreamInfos</li>
+                    <li><span class="dashboard">Dashboard</span></li>
+                    <li><span class="analyse" >Analyze</span></li>
+                    <li>Ressourcen</li>
+                    <li><span class="overlay" >Overlays</span></li>
+                    <li><span class="alert" >Alerts</span></li>
+                    <li><span class="boss-creator" >Boss Creator</span></li>
+                </ul>
+                </nav>
+            `
+            document.querySelector('header').innerHTML = `
+            <section>
+      
+            </section>
+            <section class="personal">
+                <div class="profilContainer">
+                    <div id="inBoxContainer">
+                        <div id="userName">Fieserkillerkeks</div>
+                        <label type="text" id="profilBtn"></label>
+                    </div>
+                    <ul id="profilDropdown">
+                        <li>Profil</li>
+                        <li>Settings</li>
+                        <li class="logoutSide">Logout</li>
+                    </ul>
+                </div>
+            </section>
+          `
+          document.querySelector('#userName').textContent = uData.previewName
+
             changer.innerHTML = `
             <h1 id="landH1">Dashboard</h1>
                 <div class="gridContainer">
@@ -147,7 +182,5 @@ export const changeFunc = (onclickInput) => {
                 </div>
                 `
             break;
-    }
-
-   
+    }  
 }
